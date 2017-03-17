@@ -31,6 +31,19 @@ body {
   height: 42%;
 }
 
+.cards .card:hover {
+  animation: rotate 0.5s 1 both;
+}
+
+@keyframes rotate {
+  30% {
+    transform: rotate(2deg);
+  }
+  60% {
+    transform: rotate(-2deg);
+  }
+}
+
 .cards .card h1 {
   font-family: 'Intro Black Caps';
 }
@@ -44,7 +57,7 @@ body {
   top: 0;
   min-height: 90vh;
   width: 80vw;
-  padding: 4em 7em 7em 8em;
+  padding: 7% 10% 10% 10%;
   margin: 0 auto;
   background: #fd0;
   visibility: hidden;
