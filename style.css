@@ -26,7 +26,19 @@ section {
 section .card {
   height: 45%;
   width: 22%;
-  padding: 0 2%;
+  padding: 1.5% 2.5%;
   background: #742698;
   color: #fd0;
+}
+
+section .card h1 {
+  font-family: 'Intro Black Caps';
+}
+
+.content {
+  display: none;
+}
+
+.is-active {
+  display: block;
 }

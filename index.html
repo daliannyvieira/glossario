@@ -4,6 +4,7 @@
   <title>Glossário</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="fonts/fonts.css" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -15,7 +16,7 @@
       <div class="card">
         <h1>Elevação Coletiva</h1>
       </div>
-      <div class="card">
+      <div class="card" data-target=".hellen">
         <h1>Hellen Keller</h1>
       </div>
       <div class="card">
@@ -30,10 +31,44 @@
       <div class="card">
         <h1>Riqueza Saudável</h1>
       </div>
-      <div class="card">
+      <div class="card" data-target=".utopia">
         <h1>Utopia</h1>
       </div>
-    </section>  
+    </section>
+
+    <div class="content hellen">
+      <h1>Hellen Keller</h1>
+      <h2>pessoa, ativismo, pensamento</h2>
+      <p>Helen Adams Keller (Tuscumbia, 27 de junho de 1880 — Westport, 1 de junho de 1968) foi uma escritora, conferencista e ativista social americana. Foi a primeira pessoa surda e cega a conquistar um bacharelado.</p>
+      <p>A história sobre como sua professora, Anne Sullivan, conseguiu romper o isolamento imposto pela quase total falta de comunicação, permitindo à menina florescer enquanto aprendia a se comunicar, tornou-se amplamente conhecida através do roteiro da peça The Miracle Worker que virou o filme O Milagre de Anne Sullivan (1962), dirigido por Arthur Penn (em Portugal, O Milagre de Helen Keller). Seu aniversário em 27 de junho é comemorado como o Helen Keller Day no estado da Pennsylvania e foi autorizado em nível federal por meio da proclamação presidencial de Jimmy Carter em 1980, no centenário de seu nascimento.</p>
+      <p>Tornou-se uma célebre e prolífica escritora, filósofa e conferencista, uma personagem famosa pelo extenso trabalho que desenvolveu em favor das pessoas com deficiência. Keller viajou muito e expressava de forma contundente suas convicções. Membro do Socialist Party of America e do Industrial Workers of the World, participou das campanhas pelo voto feminino, direitos trabalhistas, socialismo e outras causas de esquerda. Ela foi introduzida no Alabama Women's Hall of Fame em 1971.</p>
+    </div>
+
+    <div class="content utopia">
+      <h1>Utopia</h1>
+      <h2>dsadsadhahgdashjfdas</h2>
+      <p>Helen Adams Keller (Tuscumbia, 27 de junho de 1880 — Westport, 1 de junho de 1968) foi uma escritora, conferencista e ativista social americana. Foi a primeira pessoa surda e cega a conquistar um bacharelado.</p>
+      <p>A história sobre como sua professora, Anne Sullivan, conseguiu romper o isolamento imposto pela quase total falta de comunicação, permitindo à menina florescer enquanto aprendia a se comunicar, tornou-se amplamente conhecida através do roteiro da peça The Miracle Worker que virou o filme O Milagre de Anne Sullivan (1962), dirigido por Arthur Penn (em Portugal, O Milagre de Helen Keller). Seu aniversário em 27 de junho é comemorado como o Helen Keller Day no estado da Pennsylvania e foi autorizado em nível federal por meio da proclamação presidencial de Jimmy Carter em 1980, no centenário de seu nascimento.</p>
+      <p>Tornou-se uma célebre e prolífica escritora, filósofa e conferencista, uma personagem famosa pelo extenso trabalho que desenvolveu em favor das pessoas com deficiência. Keller viajou muito e expressava de forma contundente suas convicções. Membro do Socialist Party of America e do Industrial Workers of the World, participou das campanhas pelo voto feminino, direitos trabalhistas, socialismo e outras causas de esquerda. Ela foi introduzida no Alabama Women's Hall of Fame em 1971.</p>
+    </div>
   </main>
+
+  <script type="text/javascript">
+    var cards = document.querySelectorAll('.card');
+
+    for (var i = 0; i < cards.length; i++) {
+      cards[i].addEventListener('click', function (event) {
+        event.preventDefault();
+        var target = event.target.getAttribute('data-target');
+        var content = document.querySelector(target);
+
+        if (content.classList.contains('is-active')) {
+          content.classList.remove('is-active');
+        } else {
+          content.classList.add('is-active');
+        }
+      });
+    }
+  </script>
 </body>
 </html>
