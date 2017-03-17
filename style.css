@@ -59,7 +59,7 @@ body {
   width: 80vw;
   padding: 7% 10% 10% 10%;
   margin: 0 auto;
-  background: #fff;
+  background: #f2f2f2;
   visibility: hidden;
   -webkit-perspective: 800;
 }
@@ -91,7 +91,7 @@ body {
 
 .back {
   backface-visibility: hidden;
-  transition: transform 500ms;
+  transition: transform 1s;
   position: absolute;
   top: 0;
   left: 0;
@@ -107,7 +107,7 @@ body {
 
 .front {
   backface-visibility: hidden;
-  transition: transform 500ms;
+  transition: transform 1s;
   transform: perspective(300) rotateY(0);
   z-index: 900;
   position: absolute;
@@ -127,7 +127,7 @@ body {
 }
 
 .front-flipped {
-  transform: rotateY(180deg);
+  transform: rotateY(180deg) translate(-50%,-50%);
   transform: perspective(300) rotateY(180deg);
 }
 .back-flipped {
