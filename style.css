@@ -42,11 +42,16 @@ body {
   flex-wrap: wrap;
   position: absolute;
   top: 0;
-  max-height: 90vh;
+  min-height: 90vh;
   width: 80vw;
   padding: 4em 7em 7em 8em;
   margin: 0 auto;
   background: #fd0;
+  visibility: hidden;
+}
+
+.is-active {
+  visibility: visible;
 }
 
 .card-content h1 {
@@ -59,7 +64,7 @@ body {
 }
 
 .card-content p {
-  font-family: 'Source Sans Pro'; 
+  font-family: 'Source Sans Pro';
 }
 
 .card-content button {
