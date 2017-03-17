@@ -1,6 +1,5 @@
 (function() {
   var cards = document.querySelectorAll('.card');
-  console.log(cards)
 
   for (var i = 0; i < cards.length; i++) {
     cards[i].addEventListener('click', function(event) {
@@ -23,6 +22,8 @@
       button.addEventListener('click', function(event) {
         event.preventDefault();
         content.classList.remove('is-active');
+        front.classList.remove('front-flipped');
+        back.classList.remove('back-flipped');
       });
     });
   }
