@@ -5,7 +5,7 @@ body {
   margin: 0;
   padding: 0;
   background: #f2f2f2;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 *, *:before, *:after {
@@ -13,32 +13,59 @@ body {
   position: relative;
 }
 
-section {
+.cards {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   height: 90vh;
-  width: 90%;
+  width: 80vw;
   margin: 0 auto;
 }
 
-section .card {
-  height: 45%;
-  width: 22%;
-  padding: 1.5% 2.5%;
+.cards .card {
   background: #742698;
   color: #fd0;
+  padding: .5% 2.5%;
+  width: 22%;
+  height: 42%;
 }
 
-section .card h1 {
+.cards .card h1 {
   font-family: 'Intro Black Caps';
 }
 
-.content {
-  display: none;
+.card-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  position: absolute;
+  top: 0;
+  max-height: 90vh;
+  width: 80vw;
+  padding: 4em 7em 7em 8em;
+  margin: 0 auto;
+  background: #fd0;
 }
 
-.is-active {
-  display: block;
+.card-content h1 {
+  font-family: 'Intro Black Caps';
+  font-size: 2em;
+}
+
+.card-content h2 {
+  font-family: 'Skyhook Mono';
+}
+
+.card-content p {
+  font-family: 'Source Sans Pro'; 
+}
+
+.card-content button {
+  font-family: 'Source Sans Pro';
+  font-size: 2em;
+  background: none;
+  border: none;
+  transform: translate(10px, -50px);
 }
