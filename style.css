@@ -61,6 +61,7 @@ body {
   margin: 0 auto;
   background: #fd0;
   visibility: hidden;
+  -webkit-perspective: 800;
 }
 
 .is-active {
@@ -86,4 +87,52 @@ body {
   background: none;
   border: none;
   transform: translate(0px, -10px);
+}
+
+.front,
+.back {
+  -moz-backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-transition: -moz-transform 500ms;
+  -o-transition: -o-transform 500ms;
+  -webkit-transition: -webkit-transform 500ms;
+  transition: transform 500ms;
+  display: block;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
+.front {
+  -moz-transform: perspective(300) rotateY(0);
+  -webkit-transform: perspective(300) rotateY(0);
+  transform: perspective(300) rotateY(0);
+  z-index: 900;
+}
+.back {
+  -moz-transform: rotateY(-180deg);
+  -webkit-transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
+  z-index: 800;
+}
+
+.front-flipped {
+  -moz-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  -moz-transform: perspective(300) rotateY(180deg);
+  -webkit-transform: perspective(300) rotateY(180deg);
+  transform: perspective(300) rotateY(180deg);
+}
+.back-flipped {
+  z-index: 950;
+  -moz-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  -webkit-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+  -moz-transform: perspective(300) rotateY(0deg);
+  -webkit-transform: perspective(300) rotateY(0deg);
+  transform: perspective(300) rotateY(0deg);
 }
