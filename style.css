@@ -59,7 +59,7 @@ body {
   width: 80vw;
   padding: 7% 10% 10% 10%;
   margin: 0 auto;
-  background: #fd0;
+  background: #fff;
   visibility: hidden;
   -webkit-perspective: 800;
 }
@@ -68,20 +68,20 @@ body {
   visibility: visible;
 }
 
-.card-content h1 {
+.card-content .back h1 {
   font-family: 'Intro Black Caps';
   font-size: 2em;
 }
 
-.card-content h2 {
+.card-content .back h2 {
   font-family: 'Skyhook Mono';
 }
 
-.card-content p {
+.card-content .back p {
   font-family: 'Source Sans Pro';
 }
 
-.card-content button {
+.card-content .back button {
   font-family: 'Source Sans Pro';
   font-size: 2em;
   background: none;
@@ -89,50 +89,49 @@ body {
   transform: translate(0px, -10px);
 }
 
-.front,
 .back {
-  -moz-backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  -moz-transition: -moz-transform 500ms;
-  -o-transition: -o-transform 500ms;
-  -webkit-transition: -webkit-transform 500ms;
   transition: transform 500ms;
-  display: block;
-  height: 100%;
   position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
   width: 100%;
+  background: #fd0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 7% 10% 10% 10%;
 }
 
 .front {
-  -moz-transform: perspective(300) rotateY(0);
-  -webkit-transform: perspective(300) rotateY(0);
+  backface-visibility: hidden;
+  transition: transform 500ms;
   transform: perspective(300) rotateY(0);
   z-index: 900;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background: #742698;
+  color: #fd0;
+  padding: .5% 2.5%;
+  width: 22%;
+  height: 42%;
 }
+
 .back {
-  -moz-transform: rotateY(-180deg);
-  -webkit-transform: rotateY(-180deg);
   transform: rotateY(-180deg);
   z-index: 800;
 }
 
 .front-flipped {
-  -moz-transform: rotateY(180deg);
-  -ms-transform: rotateY(180deg);
-  -webkit-transform: rotateY(180deg);
   transform: rotateY(180deg);
-  -moz-transform: perspective(300) rotateY(180deg);
-  -webkit-transform: perspective(300) rotateY(180deg);
   transform: perspective(300) rotateY(180deg);
 }
 .back-flipped {
   z-index: 950;
-  -moz-transform: rotateY(0deg);
-  -ms-transform: rotateY(0deg);
-  -webkit-transform: rotateY(0deg);
   transform: rotateY(0deg);
-  -moz-transform: perspective(300) rotateY(0deg);
-  -webkit-transform: perspective(300) rotateY(0deg);
   transform: perspective(300) rotateY(0deg);
 }
