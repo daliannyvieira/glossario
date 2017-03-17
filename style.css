@@ -42,7 +42,7 @@ body {
   flex-wrap: wrap;
   position: absolute;
   top: 0;
-  max-height: 90vh;
+  min-height: 90vh;
   width: 80vw;
   padding: 4em 7em 7em 8em;
   margin: 0 auto;
