@@ -5,7 +5,7 @@ body {
   margin: 0;
   padding: 0;
   background: #f2f2f2;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 *, *:before, *:after {
@@ -13,32 +13,143 @@ body {
   position: relative;
 }
 
-section {
+.cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 90vh;
+  width: 80vw;
+  margin: 0 auto;
+}
+
+.cards .card {
+  background: #742698;
+  color: #fd0;
+  padding: .5% 2.5%;
+  width: 200px;
+  height: 42%;
+  margin: 1% 1.5%;
+}
+
+.cards .card:hover {
+  animation: rotate 0.5s 1 both;
+}
+
+@keyframes rotate {
+  30% {
+    transform: rotate(2deg);
+  }
+  60% {
+    transform: rotate(-2deg);
+  }
+}
+
+h1 {
+  font-family: 'Intro Black Caps';
+}
+
+.card-content {
+  position: absolute;
+  top: 0;
+  min-height: 90vh;
+  width: 80vw;
+  padding: 7% 10% 10% 10%;
+  margin: 0 auto;
+  background: #f2f2f2;
+  visibility: hidden;
+  -webkit-perspective: 800;
+}
+
+.card-content-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.is-active {
+  visibility: visible;
+}
+
+.card-content .back h1 {
+  font-family: 'Intro Black Caps';
+  font-size: 2em;
+}
+
+.card-content .back h2 {
+  font-size: 1.4em;
+  font-family: 'Skyhook Mono';
+}
+
+.card-content .back p {
+  font-family: 'Source Sans Pro';
+}
+
+.card-content .back button {
+  font-family: 'Source Sans Pro';
+  font-size: 2em;
+  background: none;
+  border: none;
+  text-transform: uppercase;
+}
+
+.back {
+  backface-visibility: hidden;
+  transition: transform 1s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #fd0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  height: 90vh;
-  width: 90%;
-  margin: 0 auto;
+  padding: 7% 10% 10% 10%;
 }
 
-section .card {
-  height: 45%;
-  width: 22%;
-  padding: 1.5% 2.5%;
+.front {
+  backface-visibility: hidden;
+  transition: transform 1s;
+  transform: perspective(300) rotateY(0);
+  z-index: 900;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
   background: #742698;
   color: #fd0;
+  padding: .5% 2.5%;
+  width: 200px;
+  height: 42%;
 }
 
-section .card h1 {
-  font-family: 'Intro Black Caps';
+.back {
+  transform: rotateY(180deg);
+  z-index: 800;
 }
 
-.content {
-  display: none;
+.front-flipped {
+  transform: rotateY(-180deg) translate(-50%,-50%) scale(2.5);
+  transform: perspective(300) rotateY(180deg);
 }
 
-.is-active {
-  display: block;
+.back-flipped {
+  z-index: 950;
+  transform: rotateY(0deg);
+  transform: perspective(300) rotateY(0deg);
+}
+
+@media (max-width: 650px) {
+
+  .card-content-header {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+ 
+  .cards .card {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+  }
 }
