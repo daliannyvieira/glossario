@@ -21,6 +21,7 @@
       var button = content.querySelector('button');
       button.addEventListener('click', function(event) {
         event.preventDefault();
+
         content.classList.remove('is-active');
         front.classList.remove('front-flipped');
         back.classList.remove('back-flipped');

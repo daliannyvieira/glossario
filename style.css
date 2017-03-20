@@ -15,7 +15,7 @@ body {
 
 .cards {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   height: 90vh;
@@ -27,8 +27,9 @@ body {
   background: #742698;
   color: #fd0;
   padding: .5% 2.5%;
-  width: 22%;
+  width: 200px;
   height: 42%;
+  margin: 1% 1.5%;
 }
 
 .cards .card:hover {
@@ -44,15 +45,11 @@ body {
   }
 }
 
-.cards .card h1 {
+h1 {
   font-family: 'Intro Black Caps';
 }
 
 .card-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
   position: absolute;
   top: 0;
   min-height: 90vh;
@@ -62,6 +59,13 @@ body {
   background: #f2f2f2;
   visibility: hidden;
   -webkit-perspective: 800;
+}
+
+.card-content-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
 .is-active {
@@ -74,6 +78,7 @@ body {
 }
 
 .card-content .back h2 {
+  font-size: 1.4em;
   font-family: 'Skyhook Mono';
 }
 
@@ -86,7 +91,7 @@ body {
   font-size: 2em;
   background: none;
   border: none;
-  transform: translate(0px, -10px);
+  text-transform: uppercase;
 }
 
 .back {
@@ -95,8 +100,6 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  height: 100%;
-  width: 100%;
   background: #fd0;
   display: flex;
   justify-content: space-between;
@@ -117,21 +120,36 @@ body {
   background: #742698;
   color: #fd0;
   padding: .5% 2.5%;
-  width: 22%;
+  width: 200px;
   height: 42%;
 }
 
 .back {
-  transform: rotateY(-180deg);
+  transform: rotateY(180deg);
   z-index: 800;
 }
 
 .front-flipped {
-  transform: rotateY(180deg) translate(-50%,-50%);
+  transform: rotateY(-180deg) translate(-50%,-50%) scale(2.5);
   transform: perspective(300) rotateY(180deg);
 }
+
 .back-flipped {
   z-index: 950;
   transform: rotateY(0deg);
   transform: perspective(300) rotateY(0deg);
+}
+
+@media (max-width: 650px) {
+
+  .card-content-header {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+ 
+  .cards .card {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+  }
 }
